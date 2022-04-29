@@ -1,6 +1,6 @@
 const select = elem => document.querySelector(elem);
 
-const countdown = function(config) {
+const countdown = function (config) {
   const targetDate = select(config.target).getAttribute('data-date').split('-');
   const targetDay = parseInt(targetDate[0]);
   const targetMonth = parseInt(targetDate[1]);
@@ -15,12 +15,12 @@ const countdown = function(config) {
   }
 
   // Set the date we're counting down to
-  const countDownDate = new Date(targetYear, targetMonth-1, targetDay, targetHour, targetMin).getTime();
+  const countDownDate = new Date(targetYear, targetMonth - 1, targetDay, targetHour, targetMin).getTime();
 
-  select(config.target+' .day .label').innerHTML = config.dayLabel;
-  select(config.target+' .hour .label').innerHTML = config.hourLabel;
-  select(config.target+' .min .label').innerHTML = config.minLabel;
-  select(config.target+' .sec .label').innerHTML = config.secLabel;
+  select(config.target + ' .day .label').innerHTML = config.dayLabel;
+  select(config.target + ' .hour .label').innerHTML = config.hourLabel;
+  select(config.target + ' .min .label').innerHTML = config.minLabel;
+  select(config.target + ' .sec .label').innerHTML = config.secLabel;
 
   const updateTime = () => {
     console.log('updateTime')
@@ -37,21 +37,22 @@ const countdown = function(config) {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    
-    select(config.target+' .day .num').innerHTML = addZero(days);
-    select(config.target+' .hour .num').innerHTML = addZero(hours);
-    select(config.target+' .min .num').innerHTML = addZero(minutes);
-    select(config.target+' .sec .num').innerHTML = addZero(seconds);
-    
+
+    select(config.target + ' .day .num').innerHTML = addZero(days);
+    select(config.target + ' .hour .num').innerHTML = addZero(hours);
+    select(config.target + ' .min .num').innerHTML = addZero(minutes);
+    select(config.target + ' .sec .num').innerHTML = addZero(seconds);
+
     // If the count down gets to zero
-    if (distance == 0) {
+    // Distance LESS THAN EQUAL to 0 - Run Callback Function OTHERWISE Request Animation Frame
+    if (distance <= 0) {
       config.callback();
+    } else {
+      requestAnimationFrame(updateTime);
     }
-    
-    requestAnimationFrame(updateTime);
   }
 
   updateTime();
 }
 
-const addZero = (x) => (x < 10 && x >= 0) ? "0"+x : x;
+const addZero = (x) => (x < 10 && x >= 0) ? "0" + x : x;
