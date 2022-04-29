@@ -3,6 +3,7 @@
 body {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   font-family: 'Neue Haas Grotesk Display', Arial, sans-serif;
   background-color: #ededed;
