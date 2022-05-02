@@ -23,12 +23,12 @@ You are able to run the current project in either way below:
 ### 2. Modify the target time
 In order to test the countdown on different occasions, in the `src/index.html`, you need to update the `data-date` and `data-time` to a closer time (e.g. current time + 1 min). So you can see how the count down behaves when it reaches the target time.
 ## TODO
-  - [ ]  Make the countdown loop stop once it reaches the target time. Currently, the countdown continues with minus values. 
-  - [ ]  Make the countdown element disappear after the target time is reached.
-  - [ ]  The CTA element should show up when the countdown is done.
-  - [ ]  The default font for the landing page is set to `Neue Haas Grotesk Display`, but the font is not applied. Investigate why and provide a solution.
-  - [ ]  Center the `wrapper` element by modifying the CSS. The `wrapper` element is not fully centered (It is horizontally centered but not vertically). 
-  - [ ]  The header text must be changed to 'We Are Live!' when the countdown is done.
+  - [x]  Make the countdown loop stop once it reaches the target time. Currently, the countdown continues with minus values. 
+  - [x]  Make the countdown element disappear after the target time is reached.
+  - [x]  The CTA element should show up when the countdown is done.
+  - [x]  The default font for the landing page is set to `Neue Haas Grotesk Display`, but the font is not applied. Investigate why and provide a solution.
+  - [x]  Center the `wrapper` element by modifying the CSS. The `wrapper` element is not fully centered (It is horizontally centered but not vertically). 
+  - [x]  The header text must be changed to 'We Are Live!' when the countdown is done.
 
 ## Questions
 Once you have fixed the CTA button, you should be able to click it. On click, the Bambuser One-to-many player will be opened. When clicking a product in the player, you will see an error page. We need you to explain as much as possible in the field further down: 
