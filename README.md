@@ -33,8 +33,18 @@ In order to test the countdown on different occasions, in the `src/index.html`, 
 ## Questions
 Once you have fixed the CTA button, you should be able to click it. On click, the Bambuser One-to-many player will be opened. When clicking a product in the player, you will see an error page. We need you to explain as much as possible in the field further down: 
    - What is the error?
+
+    Refused to display 'https://demo.bambuser.shop/' in a frame because it set 'X-Frame-Options' to 'sameorigin'.
+    Uncaught DOMException: Blocked a frame with origin "http://127.0.0.1:5500" from accessing a cross-origin frame.
+
    - Why does it happen, what is the reason for this error?
+
+  Reason being that they send an "X-Frame-Options: SAMEORIGIN" response header. This option prevents the browser from displaying iFrames that are not hosted on the same domain as the parent page. This is a security feature to prevent click-jacking or XSS Attacks.
+
    - Potential solution(s)?
+
+   Server Side solution:
+    X-Frame-Options is decided at the server side. What this means is, the one opening the page doesn't decide if document can be opened in iframe, instead author of document decides it. 
 
 ### Answer
       Place a brief explanation here. You can explain this further during the technical interview.
